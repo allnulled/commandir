@@ -1,0 +1,14 @@
+{
+  "name": "@allnulled/commandir",
+  "version": "1.0.0",
+  "description": "Commandir pattern allows to scale command pattern with directories or URLs. Nodejs or browser.",
+  "main": "commandir.js",
+  "scripts": {
+    "up": "bash up.sh",
+    "test-browser": "npx http-server -c-1 . -o test/test.html",
+    "test": "node test/test.js"
+  },
+  "keywords": ["command", "pattern", "polyfill", "cross-env", "browser", "node.js", "directories", "urls", "module", "system"],
+  "author": "allnulled",
+  "license": "WTFPL"
+}
