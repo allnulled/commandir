@@ -63,15 +63,19 @@ commandir.unregister("salute");
 
 The only difference is that `__dirname` in browsers points to the URL of the script. But `module.exports` and `return` can be used in `browser` mode to return a module from the file.
 
-2. The method `register` receives different parameters
+2. The method `register` receive different parameters
 
 In browser, `register(name, url)`. In node.js, `register(name, callback)`.
 
-3. The method `list` cannot work in browser
+3. The methods `register` and `unregister` work differently
+
+In browser, they just associate a label with a URL. In node.js, they write a file in the filesystem with the callback provided as second parameter, and remove it on `unregister`.
+
+4. The method `list` cannot work in browser
 
 Because directories in the web do not list by default, the method `list` is still not provided with a polyfill.
 
-4. Names are fixed and sanitized
+5. Names are fixed and sanitized
    
 Names have a process of validation and transformation before they get registered. They rewrite the `.js` at the end, and forbid `..` just in case.
 
